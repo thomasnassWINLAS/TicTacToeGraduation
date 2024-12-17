@@ -40,6 +40,14 @@ public class Game
         PrintBoard();
         _console.WriteLine("Board Created");
         _console.WriteLine($"{CurrentPlayer.Name} starts");
+        int round = 0;
+        while (!CheckWin() && round<=9)
+        {
+            var row= new Random().Next(0, 3);
+            var column = new Random().Next(0, 3);
+            MakeMove(row, column);
+            round++;
+        }
     }
 
     public bool MakeMove(int row, int column)

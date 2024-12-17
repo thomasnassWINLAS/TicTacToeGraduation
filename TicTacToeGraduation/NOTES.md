@@ -26,7 +26,7 @@ Game
 ~~Players take turns => player O~~
 ~~Players tries to mark occupied cell => false~~
 ~~Player X wins => 3 in a row vertically (Test all columns)~~
-Winner is displayed
+~~Winner is displayed~~
 
 RunGame
 played x wins vertically => display winner

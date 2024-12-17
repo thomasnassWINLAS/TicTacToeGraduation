@@ -176,4 +176,18 @@ public class GameTests
         console.Received().WriteLine("Player O wins!");
     }
     
+    [Fact(DisplayName = "RunGame player X wins horizontally is printed")]
+    public void RunGame_PlayerXWinsHorizontally()
+    {
+        // Arrange
+        var console = Substitute.For<IConsole>();
+        var game = new Game(console);
+        
+        // Act
+        game.RunGame();
+        
+        // Assert
+        console.Received().WriteLine("Player X wins!");
+    }
+    
 }
