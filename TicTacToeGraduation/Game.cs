@@ -55,9 +55,12 @@ public class Game
 
     public bool CheckWin()
     {
-        if(Board [0,0] == Board[1,0] && Board[1,0] == Board[2,0] && Board[0,0] != ' ')
+        for (int col = 0; col < 3; col++)
         {
-            return true;
+            if (Board[0, col] == Board[1, col] && Board[1, col] == Board[2, col] && Board[0, col] != ' ')
+            {
+                return true;
+            }
         }
         return false;
     }
