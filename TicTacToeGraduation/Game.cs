@@ -55,6 +55,10 @@ public class Game
 
     public bool CheckWin()
     {
-        throw new NotImplementedException();
+        if(Board [0,0] == Board[1,0] && Board[1,0] == Board[2,0] && Board[0,0] != ' ')
+        {
+            return true;
+        }
+        return false;
     }
 }
