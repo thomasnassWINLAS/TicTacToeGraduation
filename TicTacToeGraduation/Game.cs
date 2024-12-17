@@ -4,7 +4,7 @@ public class Game
 {
     public char[,] Board { get; } = new char[3, 3];
     
-    public Game()
+    public Game(IConsole console)
     {
         for (int i = 0; i < 3; i++)
         {
@@ -14,8 +14,14 @@ public class Game
             }
         }
     }
+    public void PrintBoard()
+    {
+        throw new NotImplementedException();
+    }
+    
     public static void Main(string[] args)
     {
         
     }
+
 }

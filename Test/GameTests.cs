@@ -1,4 +1,5 @@
-﻿using TicTacToeGraduation;
+﻿using NSubstitute;
+using TicTacToeGraduation;
 
 namespace Test;
 
@@ -8,7 +9,8 @@ public class GameTests
     public void Game_Board_ShouldBe3x3()
     {
         // Arrange
-        var game = new Game();
+        var console = Substitute.For<IConsole>();
+        var game = new Game(console);
         
         // Act
         var board = game.Board;
@@ -22,7 +24,8 @@ public class GameTests
     public void Check_BoardIsEmpty()
     {
         // Arrange
-        var game = new Game();
+        var console = Substitute.For<IConsole>();
+        var game = new Game(console);
         
         // Act
         var board = game.Board;
@@ -32,5 +35,19 @@ public class GameTests
         {
             Assert.Equal(' ', cell);
         }
+    }
+    
+    [Fact(DisplayName = "Print empty board prints empty board")]
+    public void PrintEmptyBoard_PrintsEmptyBoard()
+    {
+        // Arrange
+        var console = Substitute.For<IConsole>();
+        var game = new Game(console);
+        
+        // Act
+        game.PrintBoard();
+        
+        // Assert
+        console.Received().Write(" | | \n-+-+-\n | | \n-+-+-\n | | \n");
     }
 }
