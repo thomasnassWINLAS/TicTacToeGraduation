@@ -91,4 +91,18 @@ public class GameTests
         // Assert
         console.Received().WriteLine("Player X starts");
     }
+    
+    [Fact(DisplayName = "Player X can make a move")]
+    public void PlayerX_CanMakeMove()
+    {
+        // Arrange
+        var console = Substitute.For<IConsole>();
+        var game = new Game(console);
+        
+        // Act
+        game.MakeMove(0, 0);
+        
+        // Assert
+        Assert.Equal('X', game.Board[0, 0]);
+    }
 }

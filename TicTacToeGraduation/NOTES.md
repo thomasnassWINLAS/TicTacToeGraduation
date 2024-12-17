@@ -18,7 +18,7 @@ Game
 RunGame
 ~~Print Introduction~~
 ~~Print board~~
-Print player X turn
+~~Print player X turn~~
 
 US2 (Player X win vertically)
 Game

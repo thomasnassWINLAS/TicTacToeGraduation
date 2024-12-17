@@ -41,4 +41,9 @@ public class Game
         _console.WriteLine("Board Created");
         _console.WriteLine($"{CurrentPlayer.Name} starts");
     }
+
+    public void MakeMove(int row, int column)
+    {
+        throw new NotImplementedException();
+    }
 }
