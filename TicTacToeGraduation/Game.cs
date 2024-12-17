@@ -44,6 +44,10 @@ public class Game
 
     public bool MakeMove(int row, int column)
     {
+        if (Board[row, column] != ' ')
+        {
+            return false;
+        }
         Board[row, column] = CurrentPlayer.Symbol;
         CurrentPlayer = CurrentPlayer == _playerx ? _playero : _playerx;
         return true;
