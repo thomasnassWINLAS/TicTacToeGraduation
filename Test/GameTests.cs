@@ -63,4 +63,18 @@ public class GameTests
         // Assert
         console.Received().WriteLine("Board Created");
     }
+    
+    [Fact(DisplayName = "RunGame should print empty board")]
+    public void RunGame_ShouldPrintEmptyBoard()
+    {
+        // Arrange
+        var console = Substitute.For<IConsole>();
+        var game = new Game(console);
+        
+        // Act
+        game.RunGame();
+        
+        // Assert
+        console.Received().Write(" | | \n-+-+-\n | | \n-+-+-\n | | \n");
+    }
 }
