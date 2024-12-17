@@ -77,4 +77,18 @@ public class GameTests
         // Assert
         console.Received().Write(" | | \n-+-+-\n | | \n-+-+-\n | | \n");
     }
+    
+    [Fact(DisplayName = "RunGame should print that Player X starts")]
+    public void RunGame_ShouldPrintPlayerXStarts()
+    {
+        // Arrange
+        var console = Substitute.For<IConsole>();
+        var game = new Game(console);
+        
+        // Act
+        game.RunGame();
+        
+        // Assert
+        console.Received().WriteLine("Player X starts");
+    }
 }

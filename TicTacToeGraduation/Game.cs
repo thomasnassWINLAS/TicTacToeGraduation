@@ -4,6 +4,9 @@ public class Game
 {
     private readonly IConsole _console;
     public char[,] Board { get; } = new char[3, 3];
+    private static Player _playerx = new Player("Player X", 'X');
+    private static Player _playero = new Player("Player O", 'O');
+    public Player CurrentPlayer = _playerx;
     
     public Game(IConsole console)
     {
@@ -38,5 +41,6 @@ public class Game
         var game = new Game(_console);
         game.PrintBoard();
         _console.WriteLine("Board Created");
+        _console.WriteLine($"{game.CurrentPlayer.Name} starts");
     }
 }
