@@ -44,6 +44,6 @@ public class Game
 
     public void MakeMove(int row, int column)
     {
-        throw new NotImplementedException();
+        Board[row, column] = CurrentPlayer.Symbol;
     }
 }
