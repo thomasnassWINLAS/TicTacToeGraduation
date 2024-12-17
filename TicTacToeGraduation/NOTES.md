@@ -12,7 +12,7 @@
 US1 (game board)
 Game
 ~~Get board => 3x3 grid~~
-Board is empty => full of ' '
+~~Board is empty => full of ' '~~
 Print board => empty board
 
 RunGame
