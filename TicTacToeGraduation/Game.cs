@@ -31,12 +31,7 @@ public class Game
                        $"-+-+-\n" +
                        $"{Board[2, 0]}|{Board[2, 1]}|{Board[2, 2]}\n");
     }
-
-
-    public static void Main(string[] args)
-    {
-    }
-
+    
     public void RunGame()
     {
         PrintBoard();
