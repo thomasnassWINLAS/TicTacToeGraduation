@@ -106,4 +106,18 @@ public class GameTests
         Assert.Equal('X', game.Board[0, 0]);
     }
     
+    [Fact(DisplayName = "Player O can make a move")]
+    public void PlayerO_CanMakeMove()
+    {
+        // Arrange
+        var console = Substitute.For<IConsole>();
+        var game = new Game(console);
+        
+        // Act
+        game.MakeMove(0, 0);
+        game.MakeMove(0, 1);
+        
+        // Assert
+        Assert.Equal('O', game.Board[0, 1]);
+    }
 }
