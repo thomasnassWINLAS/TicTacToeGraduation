@@ -44,8 +44,9 @@ public class Game
             var column = _random.Next(0, 3);
             MakeMove(row, column);
             round++;
+            PrintBoard();
         }
-        PrintBoard();
+        
     }
 
     public bool MakeMove(int row, int column)
