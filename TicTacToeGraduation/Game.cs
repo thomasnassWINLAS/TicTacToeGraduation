@@ -35,6 +35,6 @@ public class Game
 
     public void RunGame()
     {
-        throw new NotImplementedException();
+        _console.WriteLine("Board Created");
     }
 }

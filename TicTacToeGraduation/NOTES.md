@@ -16,7 +16,7 @@ Game
 ~~Print board => empty board~~
 
 RunGame
-Print Introduction
+~~Print Introduction~~
 Print board
 Print player X turn
 
