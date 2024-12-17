@@ -23,7 +23,8 @@ RunGame
 US2 (Player X win vertically)
 Game
 ~~Player x makes a move => updates board~~
-Players take turns => player O
+~~Players take turns => player O~~
+Players tries to mark occupied cell => false
 Player X wins => 3 in a row vertically (Test all columns)
 Winner is displayed
 

@@ -42,9 +42,10 @@ public class Game
         _console.WriteLine($"{CurrentPlayer.Name} starts");
     }
 
-    public void MakeMove(int row, int column)
+    public bool MakeMove(int row, int column)
     {
         Board[row, column] = CurrentPlayer.Symbol;
         CurrentPlayer = CurrentPlayer == _playerx ? _playero : _playerx;
+        return true;
     }
 }

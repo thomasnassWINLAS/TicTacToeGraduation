@@ -120,4 +120,20 @@ public class GameTests
         // Assert
         Assert.Equal('O', game.Board[0, 1]);
     }
+    
+    [Fact(DisplayName = "Players can't make a move on a taken cell")]
+    public void Players_CantMakeMoveOnTakenCell()
+    {
+        // Arrange
+        var console = Substitute.For<IConsole>();
+        var game = new Game(console);
+        
+        // Act
+        game.MakeMove(0, 0);
+        var result = game.MakeMove(0, 0);
+        
+        // Assert
+        Assert.False(result);
+    }
+    
 }
