@@ -136,19 +136,22 @@ public class GameTests
         Assert.False(result);
     }
     
-    [Fact(DisplayName = "Players X wins on the vertical")]
-    public void PlayerX_WinsVertically()
+    [Theory(DisplayName = "Players X wins on the vertical")]
+    [InlineData(0, 1)]
+    [InlineData(1, 0)]
+    [InlineData(2, 0)]
+    public void PlayerX_WinsVertically(int colX,int colO)
     {
         // Arrange
         var console = Substitute.For<IConsole>();
         var game = new Game(console);
         
         // Act
-        game.MakeMove(0, 0);
-        game.MakeMove(0, 1);
-        game.MakeMove(1, 0);
-        game.MakeMove(1, 1);
-        game.MakeMove(2, 0);
+        game.MakeMove(0, colX);
+        game.MakeMove(0, colO);
+        game.MakeMove(1, colX);
+        game.MakeMove(1, colO);
+        game.MakeMove(2, colX);
         
         // Assert
         Assert.True(game.CheckWin());
