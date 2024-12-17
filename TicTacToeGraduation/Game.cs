@@ -3,14 +3,16 @@
 public class Game
 {
     private readonly IConsole _console;
+    private readonly IRandom _random;
     public char[,] Board { get; } = new char[3, 3];
     private static Player _playerx = new Player("Player X", 'X');
     private static Player _playero = new Player("Player O", 'O');
     public Player CurrentPlayer = _playerx;
 
-    public Game(IConsole console)
+    public Game(IConsole console, IRandom random)
     {
         _console = console;
+        _random = random;
 
         for (int i = 0; i < 3; i++)
         {
@@ -43,8 +45,8 @@ public class Game
         int round = 0;
         while (!CheckWin() && round<=9)
         {
-            var row= new Random().Next(0, 3);
-            var column = new Random().Next(0, 3);
+            var row= _random.Next(0, 3);
+            var column = _random.Next(0, 3);
             MakeMove(row, column);
             round++;
         }

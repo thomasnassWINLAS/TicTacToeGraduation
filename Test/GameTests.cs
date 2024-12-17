@@ -10,7 +10,8 @@ public class GameTests
     {
         // Arrange
         var console = Substitute.For<IConsole>();
-        var game = new Game(console);
+        var random = Substitute.For<IRandom>();
+        var game = new Game(console, random);
         
         // Act
         var board = game.Board;
@@ -25,7 +26,8 @@ public class GameTests
     {
         // Arrange
         var console = Substitute.For<IConsole>();
-        var game = new Game(console);
+        var random = Substitute.For<IRandom>();
+        var game = new Game(console, random);
         
         // Act
         var board = game.Board;
@@ -42,7 +44,8 @@ public class GameTests
     {
         // Arrange
         var console = Substitute.For<IConsole>();
-        var game = new Game(console);
+        var random = Substitute.For<IRandom>();
+        var game = new Game(console, random);
         
         // Act
         game.PrintBoard();
@@ -56,7 +59,8 @@ public class GameTests
     {
         // Arrange
         var console = Substitute.For<IConsole>();
-        var game = new Game(console);
+        var random = Substitute.For<IRandom>();
+        var game = new Game(console, random);
 
         // Act
         game.RunGame();
@@ -69,7 +73,8 @@ public class GameTests
     {
         // Arrange
         var console = Substitute.For<IConsole>();
-        var game = new Game(console);
+        var random = Substitute.For<IRandom>();
+        var game = new Game(console, random);
         
         // Act
         game.RunGame();
@@ -83,7 +88,8 @@ public class GameTests
     {
         // Arrange
         var console = Substitute.For<IConsole>();
-        var game = new Game(console);
+        var random = Substitute.For<IRandom>();
+        var game = new Game(console, random);
         
         // Act
         game.RunGame();
@@ -97,7 +103,8 @@ public class GameTests
     {
         // Arrange
         var console = Substitute.For<IConsole>();
-        var game = new Game(console);
+        var random = Substitute.For<IRandom>();
+        var game = new Game(console, random);
         
         // Act
         game.MakeMove(0, 0);
@@ -111,7 +118,8 @@ public class GameTests
     {
         // Arrange
         var console = Substitute.For<IConsole>();
-        var game = new Game(console);
+        var random = Substitute.For<IRandom>();
+        var game = new Game(console, random);
         
         // Act
         game.MakeMove(0, 0);
@@ -126,7 +134,8 @@ public class GameTests
     {
         // Arrange
         var console = Substitute.For<IConsole>();
-        var game = new Game(console);
+        var random = Substitute.For<IRandom>();
+        var game = new Game(console, random);
         
         // Act
         game.MakeMove(0, 0);
@@ -144,7 +153,8 @@ public class GameTests
     {
         // Arrange
         var console = Substitute.For<IConsole>();
-        var game = new Game(console);
+        var random = Substitute.For<IRandom>();
+        var game = new Game(console, random);
         
         // Act
         game.MakeMove(0, colX);
@@ -161,7 +171,8 @@ public class GameTests
     {
         // Arrange
         var console = Substitute.For<IConsole>();
-        var game = new Game(console);
+        var random = Substitute.For<IRandom>();
+        var game = new Game(console, random);
         
         // Act
         game.MakeMove(0, 2);
@@ -176,12 +187,14 @@ public class GameTests
         console.Received().WriteLine("Player O wins!");
     }
     
-    [Fact(DisplayName = "RunGame player X wins horizontally is printed")]
-    public void RunGame_PlayerXWinsHorizontally()
+    [Fact(DisplayName = "RunGame player X wins vertically is printed")]
+    public void RunGame_PlayerXWinsVertically()
     {
         // Arrange
         var console = Substitute.For<IConsole>();
-        var game = new Game(console);
+        var random = Substitute.For<IRandom>();
+        var game = new Game(console, random);
+        random.Next(0, 3).Returns(0, 0, 1, 1, 1, 0, 2, 1, 2, 0);
         
         // Act
         game.RunGame();

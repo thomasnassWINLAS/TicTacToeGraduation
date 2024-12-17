@@ -29,7 +29,7 @@ Game
 ~~Winner is displayed~~
 
 RunGame
-played x wins vertically => display winner
+~~played x wins vertically => display winner~~
 
 
 US3 (Player O win horizontally)
