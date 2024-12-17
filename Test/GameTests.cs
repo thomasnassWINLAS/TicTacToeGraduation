@@ -203,4 +203,20 @@ public class GameTests
         console.Received().WriteLine("Player X wins!");
     }
     
+    [Fact(DisplayName = "RunGame player X wins vertically displays correct board")]
+    public void RunGame_PlayerXWinsVertically_DisplaysCorrectBoard()
+    {
+        // Arrange
+        var console = Substitute.For<IConsole>();
+        var random = Substitute.For<IRandom>();
+        var game = new Game(console, random);
+        random.Next(0, 3).Returns(0, 0, 1, 1, 1, 0, 2, 1, 2, 0);
+        
+        // Act
+        game.RunGame();
+        
+        // Assert
+        console.Received().Write("X| | \n-+-+-\nX|O| \n-+-+-\nX|O| \n");
+    }
+    
 }
