@@ -7,7 +7,7 @@ public class Game
     private static Player _playerx = new Player("Player X", 'X');
     private static Player _playero = new Player("Player O", 'O');
     public Player CurrentPlayer = _playerx;
-    
+
     public Game(IConsole console)
     {
         _console = console;
@@ -20,6 +20,7 @@ public class Game
             }
         }
     }
+
     public void PrintBoard()
     {
         _console.Write($"{Board[0, 0]}|{Board[0, 1]}|{Board[0, 2]}\n" +
@@ -28,19 +29,16 @@ public class Game
                        $"-+-+-\n" +
                        $"{Board[2, 0]}|{Board[2, 1]}|{Board[2, 2]}\n");
     }
-    
-    
-    
+
+
     public static void Main(string[] args)
     {
-        
     }
 
     public void RunGame()
     {
-        var game = new Game(_console);
-        game.PrintBoard();
+        PrintBoard();
         _console.WriteLine("Board Created");
-        _console.WriteLine($"{game.CurrentPlayer.Name} starts");
+        _console.WriteLine($"{CurrentPlayer.Name} starts");
     }
 }
