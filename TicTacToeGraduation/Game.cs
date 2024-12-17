@@ -35,6 +35,8 @@ public class Game
 
     public void RunGame()
     {
+        var game = new Game(_console);
+        game.PrintBoard();
         _console.WriteLine("Board Created");
     }
 }
