@@ -52,4 +52,9 @@ public class Game
         CurrentPlayer = CurrentPlayer == _playerx ? _playero : _playerx;
         return true;
     }
+
+    public bool CheckWin()
+    {
+        throw new NotImplementedException();
+    }
 }
