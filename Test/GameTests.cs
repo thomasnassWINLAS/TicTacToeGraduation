@@ -50,4 +50,17 @@ public class GameTests
         // Assert
         console.Received().Write(" | | \n-+-+-\n | | \n-+-+-\n | | \n");
     }
+    
+    [Fact(DisplayName = "RunGame should say 'Board Created'")]
+    public void RunGame_ShouldSay_BoardCreated()
+    {
+        // Arrange
+        var console = Substitute.For<IConsole>();
+        var game = new Game(console);
+
+        // Act
+        game.RunGame();
+        // Assert
+        console.Received().WriteLine("Board Created");
+    }
 }
