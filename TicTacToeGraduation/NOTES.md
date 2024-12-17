@@ -11,7 +11,7 @@
 ### Notes:
 US1 (game board)
 Game
-Get board => 3x3 grid
+~~Get board => 3x3 grid~~
 Print board => empty board
 
 RunGame
