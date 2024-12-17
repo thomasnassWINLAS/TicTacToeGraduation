@@ -59,6 +59,8 @@ public class Game
         {
             if (Board[0, col] == Board[1, col] && Board[1, col] == Board[2, col] && Board[0, col] != ' ')
             {
+                CurrentPlayer = CurrentPlayer == _playerx ? _playero : _playerx;
+                _console.WriteLine($"{CurrentPlayer.Name} wins!");
                 return true;
             }
         }

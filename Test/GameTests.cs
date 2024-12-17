@@ -156,5 +156,24 @@ public class GameTests
         // Assert
         Assert.True(game.CheckWin());
     }
+    [Fact(DisplayName = "Players O wins on the vertical is printed")]
+    public void PlayerO_WinsVertically()
+    {
+        // Arrange
+        var console = Substitute.For<IConsole>();
+        var game = new Game(console);
+        
+        // Act
+        game.MakeMove(0, 2);
+        game.MakeMove(0, 0);
+        game.MakeMove(1, 2);
+        game.MakeMove(1, 0);
+        game.MakeMove(2, 1);
+        game.MakeMove(2, 0);
+        game.CheckWin();
+        
+        // Assert
+        console.Received().WriteLine("Player O wins!");
+    }
     
 }
