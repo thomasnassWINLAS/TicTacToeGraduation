@@ -50,6 +50,7 @@ public class Game
             MakeMove(row, column);
             round++;
         }
+        PrintBoard();
     }
 
     public bool MakeMove(int row, int column)
