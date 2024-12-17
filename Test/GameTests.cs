@@ -106,8 +106,8 @@ public class GameTests
         Assert.Equal('X', game.Board[0, 0]);
     }
     
-    [Fact(DisplayName = "Player O can make a move")]
-    public void PlayerO_CanMakeMove()
+    [Fact(DisplayName = "Players take turns")]
+    public void Players_TakeTurns()
     {
         // Arrange
         var console = Substitute.For<IConsole>();

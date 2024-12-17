@@ -45,5 +45,6 @@ public class Game
     public void MakeMove(int row, int column)
     {
         Board[row, column] = CurrentPlayer.Symbol;
+        CurrentPlayer = CurrentPlayer == _playerx ? _playero : _playerx;
     }
 }
